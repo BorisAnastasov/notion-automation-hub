@@ -2,17 +2,20 @@ import { Client } from "@notionhq/client";
 
 // ====== CONFIGURATION ======
 const TZ = "Europe/Sofia"; // Your timezone
+// src/create-notion-daily-card.js  (only this part changes)
 const PROPS = {
-  title: "Name",            // Title property name
-  date: "Date",             // Date property name
+  title: "Name",          // your Title property (usually "Name")
+  date: "Date",           // the Date column shown in your screenshot
   checkboxes: [
     "WORKOUT DONE",
-    "CALORIE GOAL HIT",
-    "10k ST"
+    "Programming 2h",
+    "10k STEPS DONE",
+    "CALORIE GOAL HIT"
   ],
-  notes: "Extra notes",     // optional rich_text property (set to null if not used)
-  quote: "Quote"            // optional rich_text property (set to null if not used)
+  notes: "Extra notes",   // keep if you have this property; else set to null
+  quote: "Quote"         // set to "Quote" if you add a Quote property; null = add as page block
 };
+
 const COVER_QUERY = "motivation"; // Unsplash topic for covers
 const QUOTE_SOURCE = "quotable";  // "quotable" or "zenquotes"
 // ============================
