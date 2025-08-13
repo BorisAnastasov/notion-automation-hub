@@ -1,0 +1,20 @@
+name: Daily Notion Card
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # Runs at 05:00 UTC every day
+  workflow_dispatch: {} # Allows manual run
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci || npm i
+      - run: node src/create-notion-daily-card.js
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}

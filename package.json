@@ -1,0 +1,13 @@
+{
+  "name": "notion-automation-hub",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/create-notion-daily-card.js",
+  "license": "MIT",
+  "scripts": {
+    "run": "node src/create-notion-daily-card.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.14"
+  }
+}
